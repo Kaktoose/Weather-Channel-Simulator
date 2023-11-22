@@ -1,10 +1,23 @@
 import { keys } from "./keys.js";
 
-//const keys = require("./keys.json")
-console.log(keys)
 
+
+
+
+//on load add classes
+
+
+//on load show title
 
 document.getElementById("title").classList.add('fadeIn')
+setTimeout( () =>{
+    document.getElementById("title").classList.remove('fadeIn')
+    document.getElementById("title").classList.add('hidden')
+    document.getElementById("slide1").classList.remove('hidden')
+    document.getElementById("slide1").classList.add('slide1')
+
+}, 5000)
+
 
 async function current_conditions() {
 

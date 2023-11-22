@@ -5,7 +5,14 @@
   
 .fadeIn { animation: fadeIn 5s; }
 
-.hidden{
+.hidden {
     display: none;
 }
 
+.title{
+    background-color: blue;
+
+}
+.slide1{
+    background: blue;
+}
