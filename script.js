@@ -5,7 +5,7 @@ console.log(keys)
 
 
 
-async function logWeather() {
+async function current_conditions() {
 
     
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Halifax&appid=${keys.WEATHER_API}&units=metric`);
@@ -19,6 +19,5 @@ async function logWeather() {
 
 
 
-  }
+}
   
-logWeather()
