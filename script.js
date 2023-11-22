@@ -1,9 +1,10 @@
-const keys = require("./keys.json")
+import { keys } from "./keys.js";
+
+//const keys = require("./keys.json")
 console.log(keys)
 
 
-
-
+document.getElementById("title").classList.add('fadeIn')
 
 async function current_conditions() {
 
