@@ -13,21 +13,34 @@ document.getElementById("title").classList.add('fadeIn')
 setTimeout( () =>{
     document.getElementById("title").classList.remove('fadeIn')
     document.getElementById("title").classList.add('hidden')
+    slide1()
+
+    
+}, 1000)
+
+
+
+
+async function slide1(){
     document.getElementById("slide1").classList.remove('hidden')
     document.getElementById("slide1").classList.add('slide1')
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Halifax&appid=${keys.WEATHER_API}&units=metric`);
+    const weather = await response.json();
+    console.log(weather);
 
-}, 5000)
+    document.getElementById("current_conditions_slide1").innerText = `${weather.name}:   ${weather.main.temp}°C`
+    console.log(current_temperature)
+
+}
+
+
+
+
 
 
 async function current_conditions() {
 
     
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Halifax&appid=${keys.WEATHER_API}&units=metric`);
-    const weather = await response.json();
-    console.log(weather);
-
-    let current_temperature = weather.main.temp
-    console.log(current_temperature)
 
 
 
