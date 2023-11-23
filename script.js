@@ -19,11 +19,15 @@ setTimeout( () =>{
     
 }, 1000)
 
+//Main: google icon name
+let icons = {
+    "Thunderstorm": 'thunderstorm',
+    "Clouds": 'cloud'
 
+}
 
 
 async function slide1(){
-    console.log('ern')
     document.querySelector('html').style.backgroundColor = '#2c2ec7'
     document.getElementById("slide1").classList.remove('hidden')
     document.getElementById("slide1").classList.add('slide1')
@@ -42,8 +46,12 @@ async function slide1(){
     document.getElementById("low_slide1").innerHTML = `Todays low: ${weather.main.temp_min}`
     document.getElementById("humidity_slide1").innerHTML = `Humidity: ${weather.main.humidity}%`
     document.getElementById("wind_speed_slide1").innerHTML = `Wind Speed: ${weather.wind.speed}km/h`
+    let mainCondition = weather.weather[0].main
+    console.log(mainCondition)
 
+    document.getElementById("icon_slide1").innerHTML = icons[mainCondition]
 
+    
 
 
 
