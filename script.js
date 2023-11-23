@@ -1,6 +1,9 @@
 import { keys } from "./keys.js";
 
 
+const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=${keys.WEATHER_API}&units=metric`);
+const weather = await response.json();
+console.log(weather);
 
 let current_gmt_time = new Date().getTime();
 
@@ -11,16 +14,19 @@ let current_gmt_time = new Date().getTime();
 
 
 //on load show title
-
+document.querySelector("html").style.backgroundColor = '#020024'
 document.getElementById("title").classList.add('fadeIn')
+
 setTimeout( () =>{
     document.getElementById("title").classList.remove('fadeIn')
     document.getElementById("title").classList.add('hidden')
+    document.getElementById("title").classList.remove('title')
+
     slide1()
     
 
     
-}, 1000)
+}, 5000)
 
 //Main: google icon name
 let icons = {
@@ -31,30 +37,36 @@ let icons = {
 
 
 async function slide1(){
+    setTimeout(slide2, 5000)
 
 
 
     document.querySelector('html').style.backgroundColor = '#020024'
     document.getElementById("slide1").classList.remove('hidden')
     document.getElementById("slide1").classList.add('slide1')
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=${keys.WEATHER_API}&units=metric`);
-    const weather = await response.json();
-    console.log(weather);
+
  
-  /*  while(true){
-        let convertedTime = current_gmt_time + weather.timezone
+  
+    let convertedTime = current_gmt_time + weather.timezone
 
-        const humanTime = new Date(convertedTime);
-        const year = humanTime.getFullYear();
-        const month = humanTime.getMonth() + 1; // Months are zero-indexed
-        const day = humanTime.getDate();
-        const hours = humanTime.getHours();
-        const minutes = humanTime.getMinutes();
-        const seconds = humanTime.getSeconds();
-        document.getElementById("slide1_time").innerText = `${hours}: ${minutes} Local Time`
+    const humanTime = new Date(convertedTime);
+    const year = humanTime.getFullYear();
+    const month = humanTime.getMonth() + 1; // Months are zero-indexed
+    const day = humanTime.getDate();
+    const hours = humanTime.getHours();
+    const minutes = humanTime.getMinutes();
+    const seconds = humanTime.getSeconds();
+    let ampm;
+
+    if(hours > 12){
+        hours-12
+        ampm = 'pm'
+    }else{
+        ampm = 'am'
+    }
+    document.getElementById("slide1_time").innerText = `${hours}:${minutes}${ampm} ${month}/${day}/${year}`
 
 
-    }*/
 
 
 
@@ -86,17 +98,19 @@ async function slide1(){
 }
 
 
+async function slide2(){
 
 
 
+    document.querySelector('html').style.backgroundColor = '#020024'
+    document.getElementById("slide1").classList.add('hidden')
+    document.getElementById("slide1").classList.remove('slide1')
+    document.getElementById("slide2").classList.remove("hidden")
+    document.getElementById("slide2").classList.add("slide2")
 
-async function current_conditions() {
-
-    
 
 
-
-
+ 
 
 }
   

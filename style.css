@@ -23,14 +23,10 @@ body{
     padding: 0;
 }
 
-.title{
-    font-family: 'Poppins';
-    font-weight: 400;
-}
+
 .slide1{
     -webkit-text-stroke: 1px black;
 
-    font-family: sans-serif;
     color: white;
     font-family: 'Poppins', serif;
     font-weight: 200;
@@ -79,6 +75,17 @@ body{
 
 }
 
+.title{
+    font-family: 'Poppins', serif;
+    color: yellow;
+    -webkit-text-stroke: 1px black;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 45vh;
+
+}
 
 
 #slide1_head  {
