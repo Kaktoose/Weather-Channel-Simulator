@@ -34,7 +34,7 @@ async function slide1(){
     document.getElementById("slide1_title").innerText = weather.name
 
 
-    document.getElementById("current_temp_slide1").innerHTML = weather.main.temp
+    document.getElementById("current_temp_slide1").innerHTML = `${weather.main.temp}°C `
 
     document.getElementById("feels_like_slide1").innerHTML = `Feels Like: ${weather.main.feels_like}`
     document.getElementById("current_condition_slide1").innerHTML = weather.weather[0].description
