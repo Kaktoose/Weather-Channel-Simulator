@@ -2,6 +2,9 @@ import { keys } from "./keys.js";
 
 
 
+let current_gmt_time = new Date().getTime();
+
+
 
 
 //on load add classes
@@ -28,12 +31,32 @@ let icons = {
 
 
 async function slide1(){
-    document.querySelector('html').style.backgroundColor = '#2c2ec7'
+
+
+
+    document.querySelector('html').style.backgroundColor = '#020024'
     document.getElementById("slide1").classList.remove('hidden')
     document.getElementById("slide1").classList.add('slide1')
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=${keys.WEATHER_API}&units=metric`);
     const weather = await response.json();
     console.log(weather);
+ 
+  /*  while(true){
+        let convertedTime = current_gmt_time + weather.timezone
+
+        const humanTime = new Date(convertedTime);
+        const year = humanTime.getFullYear();
+        const month = humanTime.getMonth() + 1; // Months are zero-indexed
+        const day = humanTime.getDate();
+        const hours = humanTime.getHours();
+        const minutes = humanTime.getMinutes();
+        const seconds = humanTime.getSeconds();
+        document.getElementById("slide1_time").innerText = `${hours}: ${minutes} Local Time`
+
+
+    }*/
+
+
 
     document.getElementById("slide1_title").innerText = weather.name
 
