@@ -1,0 +1,9 @@
+nav {
+    margin: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    padding:  10px;
+    background: linear-gradient(0deg, rgba(6,10,45,1) 0%, rgba(0,34,110,1) 50%, rgba(4,6,57,1) 100%);
+    color: whitesmoke
+}
